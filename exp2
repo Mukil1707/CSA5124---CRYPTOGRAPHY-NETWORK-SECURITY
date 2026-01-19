@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    char *str = "Hello World";
+    int i = 0;
+
+    printf("Result after AND with 127:\n");
+    while (str[i] != '\0') {
+        char andResult = str[i] & 127;  
+        printf("%c", andResult);
+        i++;
+    }
+
+    i = 0;  
+
+    printf("\n\nResult after XOR with 127:\n");
+    while (str[i] != '\0') {
+        char xorResult = str[i] ^ 127;  
+        printf("%c", xorResult);
+        i++;
+    }
+
+    return 0;
+}
