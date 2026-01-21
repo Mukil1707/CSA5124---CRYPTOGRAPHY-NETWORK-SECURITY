@@ -7,36 +7,22 @@ public class RSAExample {
 
         Scanner sc = new Scanner(System.in);
 
-        // Step 1: Choose two prime numbers
         BigInteger p = new BigInteger("17");
         BigInteger q = new BigInteger("11");
 
-        // Step 2: Compute n and phi
         BigInteger n = p.multiply(q);
         BigInteger phi = p.subtract(BigInteger.ONE)
                           .multiply(q.subtract(BigInteger.ONE));
 
-        // Step 3: Choose e
         BigInteger e = new BigInteger("7");
-
-        // Step 4: Compute d
         BigInteger d = e.modInverse(phi);
-
         System.out.println("Public Key (e, n): (" + e + ", " + n + ")");
         System.out.println("Private Key (d, n): (" + d + ", " + n + ")");
-
-        // Step 5: Input message as STRING
         System.out.print("Enter message: ");
         String message = sc.nextLine();
-
-        // Convert message to number
         BigInteger msg = new BigInteger(message.getBytes());
-
-        // Encryption: c = m^e mod n
         BigInteger cipher = msg.modPow(e, n);
         System.out.println("Encrypted Message: " + cipher);
-
-        // Decryption: m = c^d mod n
         BigInteger decrypted = cipher.modPow(d, n);
         String decryptedText = new String(decrypted.toByteArray());
 
