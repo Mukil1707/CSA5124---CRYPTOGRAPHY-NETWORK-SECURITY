@@ -13,7 +13,6 @@ public class RSAExample {
         BigInteger n = p.multiply(q);
         BigInteger phi = p.subtract(BigInteger.ONE)
                           .multiply(q.subtract(BigInteger.ONE));
-
         BigInteger e = new BigInteger("7");
         BigInteger d = e.modInverse(phi);
         System.out.println("Public Key (e, n): (" + e + ", " + n + ")");
