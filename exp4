@@ -6,7 +6,7 @@ public class DES {
     	String msg = "MUKILAN";
     	KeyGenerator kg = KeyGenerator.getInstance("DES");
     	SecretKey key = kg.generateKey();
- 
+
     	Cipher enc = Cipher.getInstance("DES");
         enc.init(Cipher.ENCRYPT_MODE, key);
     	byte[] encMsg = enc.doFinal(msg.getBytes());
