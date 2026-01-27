@@ -3,7 +3,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 public class BlowfishExample {
 	public static void main(String[] args) throws Exception {
-    	String plaintext = "HARIPRASAD";
+    	String plaintext = "MUKILAN";
     	String key = "mysecretkey";
     	SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), "Blowfish");
     	Cipher encryptCipher = Cipher.getInstance("Blowfish");
